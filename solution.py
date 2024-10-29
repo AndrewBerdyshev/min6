@@ -2,11 +2,11 @@ from typing import Callable
 import math
 
 
-def flatten(lst: list, depth = math.inf, i = 0) -> list:
+def flatten(lst: list, depth = math.inf) -> list:
     result = []
     for el in lst:
-        if isinstance(el, list) and i < depth:
-            for fel in flatten(el, depth, i+1):
+        if isinstance(el, list) and depth > 0:
+            for fel in flatten(el, depth-1):
                 result.append(fel)
         else:
             result.append(el)
