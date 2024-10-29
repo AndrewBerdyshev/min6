@@ -6,7 +6,7 @@ def flatten(lst: list, depth = math.inf) -> list:
     result = []
     for el in lst:
         if isinstance(el, list) and depth > 0:
-            for fel in flatten(el, depth-1):
+            for fel in flatten(el, depth - 1):
                 result.append(fel)
         else:
             result.append(el)
